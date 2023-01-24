@@ -21,8 +21,8 @@ table {
    /* border-top: 2px solid #cccccc; */
    border-collapse: collapse;
    max-width: 90%;
-   margin: 20px auto 0px;
-   padding: 20px 15px 20px;
+   margin: 20px auto 50px;
+   /* padding: 20px 15px 20px; */
    border-radius: 4px;
    background-color: #444;
    color: #fff;
@@ -34,8 +34,8 @@ th {
    border-bottom: 2px solid #cccccc;
 }
 td {
-   padding: 4px 6px;
-   font-size: 1.8rem;
+   padding: 5px 6px;
+   font-size: 2rem;
    word-wrap: break-word;
    overflow-wrap: break-word;
 }
@@ -69,13 +69,11 @@ td {
    border-top: unset;
 }
 .btn {
-   /* padding: 5px; */
-   width: 45px;
-   padding: 4px 0;
+   font-size: 2rem;
+   padding: 4px 5px;
    margin: 2px 4px;
    background-color: #333333;
    color: #fff;
-   font-size: 1.6rem;
    border: none;
    background-color: #f55757;
    border-radius: 4px;
@@ -124,6 +122,6 @@ td {
    /* transform: translateY(-30px); */
    transition: 0.3s linear;
 }
-
-.drink-section {
+.item-cta {
+   border-bottom: 1px solid #999;
 }

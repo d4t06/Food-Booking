@@ -48,32 +48,37 @@ function TodoList() {
       return (
          <>
             {todos.map((task, index) => (
-               <tr key={index}>
-                  <td>{task.name}</td>
-                  <td>{`${task.foods}`}</td>
-                  {/* <td>{INTEGER_FORMATER.format(evaluate(task.key, 50000))}</td> */}
-                  <td>{evaluate(task.key, task.moneyReceipt)}</td>
-                  <td>
-                     <button
-                        className={cx("btn")}
-                        style={{ marginLeft: "5px" }}
-                        onClick={() => handleDelete(index, dispatch)}
-                     >
-                        Xóa
-                     </button>
-                     <button
-                        className={cx("btn")}
-                        style={{ marginLeft: "5px" }}
-                        onClick={() => handleEdit(index, todos, dispatch)}
-                     >
-                        Sửa
-                     </button>
+               <>
+                  <tr key={index}>
+                     <td>{task.name}</td>
+                     <td>{`${task.foods}`}</td>
+                     {/* <td>{INTEGER_FORMATER.format(evaluate(task.key, 50000))}</td> */}
+                     <td>{evaluate(task.key, task.moneyReceipt)}</td>
+
                      {/* <button className={cx("btn")} style={{ marginLeft: "5px" }} onClick={() => evaluate(task.key)}>
                         Tinh tien
                      </button> */}
                      {/* <button onClick={() => handleEdit(index)}>Sua</button> */}
-                  </td>
-               </tr>
+                  </tr>
+                  <tr className={cx("item-cta")}>
+                     <td style={{ textAlign: "center" }} colSpan={"3"}>
+                        <button
+                           className={cx("btn")}
+                           style={{ marginLeft: "5px" }}
+                           onClick={() => handleDelete(index, dispatch)}
+                        >
+                           Xóa
+                        </button>
+                        <button
+                           className={cx("btn")}
+                           style={{ marginLeft: "5px" }}
+                           onClick={() => handleEdit(index, todos, dispatch)}
+                        >
+                           Sửa
+                        </button>
+                     </td>
+                  </tr>
+               </>
             ))}
          </>
       );
@@ -218,10 +223,9 @@ function TodoList() {
          >
             {todos.length >= 1 && (
                <tr style={{ textAlign: "left" }}>
-                  <th style={{ width: "25%" }}>Tên</th>
-                  <th style={{ width: "55%" }}>Gọi</th>
+                  <th style={{ width: "20%" }}>Tên</th>
+                  <th style={{ width: "60%" }}>Gọi</th>
                   <th style={{ width: "20%" }}>Tổng</th>
-                  <th></th>
                </tr>
             )}
             {renderTasks()}

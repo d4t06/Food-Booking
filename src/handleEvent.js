@@ -44,7 +44,7 @@ export const handleAdd = (dispatch, nameRef, moneyReceiptRef) => {
          ...data,
       },
    });
-   moneyReceiptEl.value = 0;
+   moneyReceiptEl.value = "";
    nameEl.value = "";
    handleClear(inputs);
    isEdit = false;
@@ -83,9 +83,11 @@ export const evaluate = (foods, moneyReceipt) => {
       const [key, quantity] = item.split(".");
       result += price[key] * quantity;
    });
-   if (moneyReceipt) {
+   if (!!moneyReceipt) {
+      console.log(moneyReceipt, "cos nhan tien");
       return `${INTEGER_FORMATER.format(moneyReceipt)} - ${INTEGER_FORMATER.format(result)}
        = ${INTEGER_FORMATER.format(moneyReceipt - result)}`;
    }
+   console.log("khong nha tien");
    return INTEGER_FORMATER.format(result);
 };
