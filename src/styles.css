@@ -18,27 +18,21 @@ body {
    margin: 0 auto;
 }
 table {
-   /* border-top: 2px solid #cccccc; */
-   border-collapse: collapse;
    max-width: 90%;
-   margin: 20px auto 50px;
-   /* padding: 20px 15px 20px; */
+   margin: 0 auto 50px;
    border-radius: 4px;
    background-color: #444;
    color: #fff;
 }
-th {
-   padding: 4px 6px;
-   font-size: 1.8rem;
-   text-transform: uppercase;
-   border-bottom: 2px solid #cccccc;
-}
 td {
-   padding: 5px 6px;
-   font-size: 2rem;
+   padding: 6px 0 6px 12px;
+   font-size: 2.2rem;
    word-wrap: break-word;
    overflow-wrap: break-word;
 }
+/* tr td:first-child {
+   padding-top: 10px;
+} */
 #money-input,
 #name-input {
    width: 55%;
@@ -79,11 +73,13 @@ td {
    border-radius: 4px;
 }
 .add-btn {
+   position: relative;
+   left: 50%;
    border-radius: 4px;
-   font-size: 2.5rem;
+   transform: translateX(-50%);
+   margin: 20px 0;
    padding: 5px 10px;
-   margin-left: 15px;
-   margin-top: 20px;
+   font-size: 2.5rem;
    border: none;
    color: #ffffff;
    background-color: #f55757;

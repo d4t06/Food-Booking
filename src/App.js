@@ -2,6 +2,7 @@
 // 27/9/2022 useContext
 import { useReducer, useRef, useState } from "react";
 import classNames from "classnames/bind";
+import { INTEGER_FORMATER } from "./handleEvent";
 
 import reducer from "./reducer";
 import styles from "./styles.css";
@@ -44,24 +45,33 @@ function TodoList() {
    const [money, setMoney] = useState("");
    const { todos } = state;
 
+   function handleMoneyInput(e) {
+      console.log(e.target.value);
+      // e.target.value = INTEGER_FORMATER.format(e.target.value);
+      setMoney(INTEGER_FORMATER.format(e.target.value));
+   }
+
    const renderTasks = () => {
       return (
          <>
             {todos.map((task, index) => (
                <>
                   <tr key={index}>
-                     <td>{task.name}</td>
-                     <td>{`${task.foods}`}</td>
+                     <td>Tên: {task.name}</td>
                      {/* <td>{INTEGER_FORMATER.format(evaluate(task.key, 50000))}</td> */}
-                     <td>{evaluate(task.key, task.moneyReceipt)}</td>
-
                      {/* <button className={cx("btn")} style={{ marginLeft: "5px" }} onClick={() => evaluate(task.key)}>
                         Tinh tien
                      </button> */}
                      {/* <button onClick={() => handleEdit(index)}>Sua</button> */}
                   </tr>
-                  <tr className={cx("item-cta")}>
-                     <td style={{ textAlign: "center" }} colSpan={"3"}>
+                  <tr>
+                     <td>Gọi món: {`${task.foods}`}</td>
+                  </tr>
+                  <tr>
+                     <td>Tổng: {evaluate(task.key, task.moneyReceipt)}</td>
+                  </tr>
+                  <tr>
+                     <td className={cx("item-cta")} style={{ textAlign: "center" }}>
                         <button
                            className={cx("btn")}
                            style={{ marginLeft: "5px" }}
@@ -209,7 +219,13 @@ function TodoList() {
             </form>
             <p className={cx("label")}>
                Nhận tiền:
-               <input type="number" ref={moneyReceiptRef} id="money-input" step="10000" />
+               <input
+                  type="number"
+                  // value={money}
+                  ref={moneyReceiptRef}
+                  id="money-input"
+                  // onChange={(e) => handleMoneyInput(e)}
+               />
             </p>
          </form>
          <button className={cx("add-btn")} onClick={() => handleAdd(dispatch, nameRef, moneyReceiptRef)}>
@@ -221,13 +237,6 @@ function TodoList() {
                fontSize: "1rem",
             }}
          >
-            {todos.length >= 1 && (
-               <tr style={{ textAlign: "left" }}>
-                  <th style={{ width: "20%" }}>Tên</th>
-                  <th style={{ width: "60%" }}>Gọi</th>
-                  <th style={{ width: "20%" }}>Tổng</th>
-               </tr>
-            )}
             {renderTasks()}
          </table>
       </div>

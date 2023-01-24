@@ -1,7 +1,5 @@
 import price from "./price.js";
-export const INTEGER_FORMATER = new Intl.NumberFormat("en-us", {
-   maximumFractionDigits: 1,
-});
+export const INTEGER_FORMATER = new Intl.NumberFormat("en-us");
 let isEdit = false;
 export const handleDelete = (index, dispatch) => {
    dispatch({ type: "DELETE", payload: index });
