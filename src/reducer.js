@@ -3,6 +3,7 @@ const ADD_JOB = "ADD";
 const DELETE_JOB = "DELETE";
 // 1. initial state
 // tạo ra hai state
+
 const setJob = function (payload) {
    return {
       type: SET_JOB,
@@ -44,7 +45,10 @@ const reducer = (state, { type, payload }) => {
             return {
                todos: [],
             };
+         console.log(state);
          state.todos.splice(payload, 1);
+         console.log(state);
+
          return {
             ...state,
          };

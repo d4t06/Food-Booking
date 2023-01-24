@@ -12,7 +12,7 @@ export const handleAdd = (dispatch, nameRef, moneyReceiptRef) => {
    const moneyReceiptEl = moneyReceiptRef.current;
 
    if (nameEl.value === "") {
-      alert("Vui long them ten");
+      alert("Chưa điền tên");
       return;
    }
 
@@ -34,7 +34,7 @@ export const handleAdd = (dispatch, nameRef, moneyReceiptRef) => {
    });
 
    if (!isInludeValue) {
-      alert("Vui long chon mon");
+      alert("Chưa chọn món");
       return;
    }
 
