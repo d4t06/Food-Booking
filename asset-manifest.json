@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/d4t06/food-booking/static/css/main.5b922a62.css",
+    "main.js": "/d4t06/food-booking/static/js/main.d8442f71.js",
+    "index.html": "/d4t06/food-booking/index.html",
+    "main.5b922a62.css.map": "/d4t06/food-booking/static/css/main.5b922a62.css.map",
+    "main.d8442f71.js.map": "/d4t06/food-booking/static/js/main.d8442f71.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5b922a62.css",
+    "static/js/main.d8442f71.js"
+  ]
+}
